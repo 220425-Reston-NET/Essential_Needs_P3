@@ -9,6 +9,9 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
+// builder.Services.AddScoped<IRepository<User>, SQLCustomerRepository>(repo => new SQLUserRepository(builder.Configuration.GetConnectionString("Daniel Pagan")));
+// builder.Services.AddScoped<IUserBL, UserBL>();
+
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
