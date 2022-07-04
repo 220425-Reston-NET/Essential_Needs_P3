@@ -11,5 +11,7 @@ public class Store
         sID = 0;
         Name = "Default";
         Products = new List<Products>();
+        User = new List<User>();
+        
     }
 }

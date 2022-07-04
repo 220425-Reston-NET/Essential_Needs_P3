@@ -5,13 +5,9 @@ namespace StoreModel;
 
 public class Products
 {
-    public string Store { get; set; }
-    public int pPrice1oz { get; set; }
-    public int pPrice4oz { get; set; }
-    private int _pID;
     public int pID
     {
-        get{ return _pID; }
+        get { return _pID; }
         set
         {
             if (value > 0)
@@ -24,11 +20,15 @@ public class Products
             }
         }
     }
+    public int pPrice1oz { get; set; }
+    public int pPrice4oz { get; set; }
+    private int _pID;
 
-    private string ? _pName;
-    public string ? pName
+
+    private string? _pName;
+    public string? pName
     {
-        get{ return _pName; }
+        get { return _pName; }
         set
         {
             if (Regex.IsMatch(value, @"^[a-zA-Z ]+$"))
@@ -45,7 +45,7 @@ public class Products
     private int _quantity;
     public int Quantity
     {
-        get{ return _quantity; }
+        get { return _quantity; }
         set
         {
             if (value > 0)
@@ -62,17 +62,16 @@ public class Products
 
     public Products()
     {
-        Store = "";
         pName = "";
         pPrice1oz = 0;
         pPrice4oz = 0;
 
     }
 
-    public int uID{ get; set; }
+    public int uID { get; set; }
     public override string ToString()
     {
-        return $"===Products info===\nStore: {Store}\npName: {pName}\npPrice1oz: {pPrice1oz}\npPrice4oz: {pPrice4oz}\nQuantity: {Quantity}\n=======";
+        return $"===Products info===\npName: {pName}\npPrice1oz: {pPrice1oz}\npPrice4oz: {pPrice4oz}\nQuantity: {Quantity}\n=======";
     }
 
 }
