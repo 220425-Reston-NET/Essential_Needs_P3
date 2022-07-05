@@ -85,8 +85,8 @@ namespace StoreDL
         public void Update(User p_resource)
         {
             string SQLquery = @"update User
-                            set userName = @userName, userAddress = @userAddress, userEmail = @userEmail, userPassword = @userPassword
-                            where userID = @userID";
+                               set userName = @userName, userAddress = @userAddress, userEmail = @userEmail, userPassword = @userPassword
+                               where userID = @userID";
 
             using (SqlConnection con = new SqlConnection(_connectionString))
             {
