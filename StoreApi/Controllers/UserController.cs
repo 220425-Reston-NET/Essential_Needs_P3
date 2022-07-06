@@ -18,6 +18,23 @@ namespace StoreApi.Controllers
             _productsBL = p_productsBL;
         }
 
+        [HttpGet("GetAllUser")]
+        public IActionResult GetAllUser()
+        {
+            try
+            {
+                List<User> listOfCurrentUser = _userBL.GetAllUser();
+
+                return Ok(listOfCurrentUser);
+            }
+            catch (System.Exception)
+            {
+
+                throw;
+            }
+        }
+
+
         [HttpPost("AddUser")]
         public IActionResult AddUser([FromBody] User u_use)
         {
