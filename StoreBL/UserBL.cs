@@ -23,6 +23,11 @@ namespace StoreBL
             }
         }
 
+        public List<User> GetAllUser()
+        {
+            throw new NotImplementedException();
+        }
+
         public User SearchUserByEmailAndPassword(string Email, string Password)
         {
             return _userRepo.GetAll().First(user => user.Email == Email && user.Password == Password);
