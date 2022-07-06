@@ -28,6 +28,11 @@ namespace StoreBL
             _prRepo.Update(medTable);
         }
 
+        public void ReplenishProductsQuantity(int pID, int uID, int quantity)
+        {
+            throw new NotImplementedException();
+        }
+
         public Products SearchProductByName(string p_pName)
         {
             return _prRepo.GetAll().First(Products => Products.pName == p_pName);
