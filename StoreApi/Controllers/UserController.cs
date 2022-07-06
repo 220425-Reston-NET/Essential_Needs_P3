@@ -1,11 +1,11 @@
+global using Serilog;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
 using StoreBL;
 using StoreModel;
 
-
 namespace StoreApi.Controllers
-{
+{    
     [Route("api/[controller]")]
     [ApiController]
     public class UserController : ControllerBase
@@ -23,13 +23,13 @@ namespace StoreApi.Controllers
         {
             try
             {
+                Log.Information("User was Searched");
                 List<User> listOfCurrentUser = _userBL.GetAllUser();
 
                 return Ok(listOfCurrentUser);
             }
             catch (System.Exception)
             {
-
                 throw;
             }
         }
@@ -40,11 +40,13 @@ namespace StoreApi.Controllers
         {
             try
             {
+                Log.Information("User Was Added");
                 _userBL.AddUser(u_use);
-                return Created("Customer was added!", u_use);
+                return Created("User was added!", u_use);
             }
             catch (SqlException)
             {
+                Log.Warning("User was not found");
                 return Conflict();
             }
         }
@@ -54,6 +56,7 @@ namespace StoreApi.Controllers
         {
             try
             {
+                Log.Information("User was searched by name");
                 return Ok(_userBL.SearchUserByName(userName));
             }
             catch (SqlException)
@@ -67,6 +70,7 @@ namespace StoreApi.Controllers
         {
             try
             {
+                Log.Information("User was searched by email and password");
                 return Ok(_userBL.SearchUserByEmailAndPassword(Email, Password));
             }
             catch (System.AccessViolationException)
@@ -82,6 +86,7 @@ namespace StoreApi.Controllers
 
             if (found == null)
             {
+                Log.Warning("Store was not found!");
                 return NotFound("Store was not found!");
             }
 

@@ -9,5 +9,6 @@ namespace StoreBL
         User SearchUserByName(string p_userName);
 
         User SearchUserByEmailAndPassword(string Email, string Password);
+        List<User> GetAllUser();
     }
 }

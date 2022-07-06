@@ -2,6 +2,10 @@ using StoreBL;
 using StoreDL;
 using StoreModel;
 
+Log.Logger = new LoggerConfiguration()
+.WriteTo.File("./Logs/User.txt")
+.CreateLogger();
+
 var builder = WebApplication.CreateBuilder(args);
 
 

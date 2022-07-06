@@ -21,11 +21,16 @@ namespace StoreBL
 
         public void ReplenishProductQuantity(int p_pID, int p_Quantity)
         {
-            Products medTable = new Products();
-            medTable.pID = p_pID;
-            medTable.Quantity = p_Quantity;
+            Products productsTable = new Products();
+            productsTable.pID = p_pID;
+            productsTable.Quantity = p_Quantity;
 
-            _prRepo.Update(medTable);
+            _prRepo.Update(productsTable);
+        }
+
+        public void ReplenishProductsQuantity(int pID, int uID, int quantity)
+        {
+            throw new NotImplementedException();
         }
 
         public Products SearchProductByName(string p_pName)

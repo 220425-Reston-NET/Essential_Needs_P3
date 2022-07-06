@@ -23,6 +23,12 @@ namespace StoreBL
             }
         }
 
+        public List<User> GetAllUser()
+        {
+            List<User> currentListOfUser = _userRepo.GetAll();
+            return currentListOfUser;
+        }
+
         public User SearchUserByEmailAndPassword(string Email, string Password)
         {
             return _userRepo.GetAll().First(user => user.Email == Email && user.Password == Password);
