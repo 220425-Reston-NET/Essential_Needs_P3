@@ -16,15 +16,15 @@ namespace StoreTest;
         public void uID_Should_Set_ValidData()
         {
             //Arrange
-            Products uIDObj = new Products();
+            User userObj = new User();
             int uId = 28;
 
             //Act
-            uIDObj.uID = uId;
+            userObj.uID = uId;
 
             //Assert
-            Assert.NotNull(uIDObj.uID); 
-            Assert.Equal(uId, uIDObj.uID); 
+            Assert.NotNull(userObj.uID); 
+            Assert.Equal(uId, userObj.uID); 
         }
 
 
@@ -37,15 +37,15 @@ namespace StoreTest;
         [InlineData(-1290)]
         [InlineData(0)]
         [InlineData(-12983)]
-        public void proId_Should_Fail_Set_InvalidData(int p_uID)
+        public void uID_Should_Fail_Set_InvalidData(int p_uID)
         {
             //Arrange
-            Products uIDObj = new Products();
+            User userObj = new User();
 
             //Act & Assert
             Assert.Throws<System.ComponentModel.DataAnnotations.ValidationException>(() => 
                 {
-                    uIDObj.uID = p_uID;
+                    userObj.uID = p_uID;
                 }
             );
         }
