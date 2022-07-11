@@ -7,5 +7,6 @@ namespace StoreBL
         public List<Products> GetAllProducts(int p_pID);
         void ReplenishProductQuantity(int p_pID, int p_Quantity);
         void ReplenishProductsQuantity(int pID, int uID, int quantity);
+        List<Products> GetAllProducts();
     }
 }

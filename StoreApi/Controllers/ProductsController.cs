@@ -48,17 +48,6 @@ namespace StoreApi.Controllers
         }
 
 
-        [HttpPut("ReplenishProductsQuantity")]
-        public IActionResult ReplenishProductQuantity([FromQuery] int p_pID, [FromQuery] int p_pName, [FromQuery] int p_Quantity)
-        {
-            {} found = _prodBL.ReplenishProductsQuantity(p_pID, found.p_pName, p_Quantity);
-
-            if (found == null)
-            {
-                return NotFound("Store was not found!");
-            }
-
-        
-        }
+    
     }
 }

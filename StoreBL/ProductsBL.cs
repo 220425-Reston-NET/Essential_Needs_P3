@@ -17,7 +17,10 @@ namespace StoreBL
             return _prRepo.GetAll();
         }
 
-        
+        public List<Products> GetAllProducts()
+        {
+            throw new NotImplementedException();
+        }
 
         public void ReplenishProductQuantity(int p_pID, int p_Quantity)
         {
