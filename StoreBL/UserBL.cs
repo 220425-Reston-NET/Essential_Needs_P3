@@ -25,7 +25,7 @@ namespace StoreBL
 
         public List<User> GetAllUser()
         {
-            throw new NotImplementedException();
+           return _userRepo.GetAll();
         }
 
         public User SearchUserByEmailAndPassword(string Email, string Password)
@@ -35,7 +35,15 @@ namespace StoreBL
 
         public User SearchUserByName(string p_userName)
         {
-            return _userRepo.GetAll().First(user => user.Name == p_userName);
+            try
+            {
+               return  _userRepo.GetAll().First(user => user.Name == p_userName);
+            }
+            catch (System.InvalidOperationException)
+            {
+                return null; 
+            }
+           
         }
 
         public void UpdateUser(User u_use)
