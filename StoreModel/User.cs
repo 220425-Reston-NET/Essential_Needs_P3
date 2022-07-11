@@ -27,7 +27,7 @@ public class User
         get{ return _name; }
         set
         {
-            if (Regex.IsMatch(value, @"^[a-zA-Z ]+$"))
+            if (!Regex.IsMatch(value, @"^[a-z A-Z ]+$ "))
             {
                 _name = value;
             }

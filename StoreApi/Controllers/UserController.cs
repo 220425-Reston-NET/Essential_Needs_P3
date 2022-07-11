@@ -20,17 +20,17 @@ namespace StoreApi.Controllers
 
         [HttpGet("GetAllUser")]
         public IActionResult GetAllUser()
-        {
-            try
-            {
-                List<User> listOfCurrentUser = _userBL.GetAllUser();
+        { List<User> listOfCurrentUser = _userBL.GetAllUser();
 
                 return Ok(listOfCurrentUser);
+            try
+            {
+               
             }
-            catch (System.Exception)
+            catch (SqlException)
             {
 
-                throw;
+                return NotFound("No Users were found.");
             }
         }
 

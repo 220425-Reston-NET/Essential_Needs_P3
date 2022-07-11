@@ -26,11 +26,14 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-var app = builder.Build();
-
 
 builder.Services.AddScoped<IRepository<User>, SqlUserRepository>(repo => new SqlUserRepository(builder.Configuration.GetConnectionString("Daniel Pagan")));
 builder.Services.AddScoped<IUserBL, UserBL>();
+builder.Services.AddScoped<IRepository<Products>, SqlProductsRepository>(repo => new SqlProductsRepository(builder.Configuration.GetConnectionString("Daniel Pagan")));
+builder.Services.AddScoped<IProductsBL, ProductsBL>();
+
+
+var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

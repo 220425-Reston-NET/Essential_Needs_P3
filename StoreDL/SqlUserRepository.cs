@@ -17,8 +17,8 @@ namespace StoreDL
 
         public void Add(User p_resource)
         {
-            String SQLQuery = @"insert into Users
-                                values(@userName, @userAddress, @userEmail, @userPassword)";
+            String SQLQuery = "insert into \"User\" values(@userName, @userAddress, @userEmail, @userPassword)";
+                               
 
             using (SqlConnection con = new SqlConnection(_connectionString))
             {
@@ -37,7 +37,7 @@ namespace StoreDL
 
         public void Delete(User p_resource)
         {
-            String SQLQuery = @"DELETE FROM Users WHERE userID = @userID";
+            String SQLQuery = "DELETE FROM \"User\" WHERE userID = @userID";
 
             using (SqlConnection con = new SqlConnection(_connectionString))
             {
@@ -56,7 +56,7 @@ namespace StoreDL
 
         public List<User> GetAll()
         {
-            String SQLQuery = @"select * from Users";
+            String SQLQuery = "select * from \"User\"";
             List<User> listofUser = new List<User>();
 
             using (SqlConnection con = new SqlConnection(_connectionString))
