@@ -37,7 +37,7 @@ namespace StoreTest;
         [InlineData(-1290)]
         [InlineData(0)]
         [InlineData(-12983)]
-        public void MedId_Should_Fail_Set_InvalidData(int p_uID)
+        public void proId_Should_Fail_Set_InvalidData(int p_uID)
         {
             //Arrange
             Products uIDObj = new Products();
