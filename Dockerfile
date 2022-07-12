@@ -8,7 +8,7 @@ workdir /app
 copy /publish ./
 
 #Change from CMD to entrypoint
-entrypoint ["dotnet", "LusciusBlends.dll"]
+entrypoint ["dotnet", "StoreApi.dll"]
 
 #Change port to 5000
 expose 5000
