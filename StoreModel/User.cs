@@ -38,20 +38,11 @@ public class User
         }
     }
 
-    private string _address;
-    public string Address
-    {
-        get{ return _address; }
-        set{ _address = value; }
-    }
+    public string Address { get; set; }
 
-    private string _email;
-    public string Email
-    {
-        get{ return _email; }
-        set{ _email = value; }
-    }
 
+    public string Email { get; set; }
+   
     public string Password { get; set; }
     public List<Products> Products { get; set; }
     public User()

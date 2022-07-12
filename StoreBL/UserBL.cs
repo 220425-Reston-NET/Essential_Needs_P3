@@ -30,7 +30,15 @@ namespace StoreBL
 
         public User SearchUserByEmailAndPassword(string Email, string Password)
         {
-            return _userRepo.GetAll().First(user => user.Email == Email && user.Password == Password);
+            try
+            {
+                return _userRepo.GetAll().First(user => user.Email == Email && user.Password == Password);
+            }
+            catch (System.InvalidOperationException)
+            {
+                return null;
+            }
+            
         }
 
         public User SearchUserByName(string p_userName)
