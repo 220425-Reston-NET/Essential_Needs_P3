@@ -32,9 +32,9 @@ builder.Services.AddSwaggerGen();
 // builder.Services.AddScoped<IRepository<Products>, SqlProductsRepository>(repo => new SqlProductsRepository(builder.Configuration.GetConnectionString("Daniel Pagan")));
 // builder.Services.AddScoped<IProductsBL, ProductsBL>();
 
-builder.Services.AddScoped<IRepository<User>, SqlUserRepository>(repo => new SqlUserRepository(Environment.GetEnvironmentVariable("Daniel Pagan")));
+builder.Services.AddScoped<IRepository<User>, SqlUserRepository>(repo => new SqlUserRepository(Environment.GetEnvironmentVariable("Connection_String")));
 builder.Services.AddScoped<IUserBL, UserBL>();
-builder.Services.AddScoped<IRepository<Products>, SqlProductsRepository>(repo => new SqlProductsRepository(Environment.GetEnvironmentVariable("Daniel Pagan")));
+builder.Services.AddScoped<IRepository<Products>, SqlProductsRepository>(repo => new SqlProductsRepository(Environment.GetEnvironmentVariable("Connection_String")));
 builder.Services.AddScoped<IProductsBL, ProductsBL>();
 
 
